@@ -93,6 +93,7 @@ function renderJobs() {
     <td>${member.price}</td>
     <td>${member.occupation}</td>`;
     table.appendChild(row);
+  
   });
 }
 renderJobs();
@@ -107,11 +108,16 @@ const addFreelancersIntervalId = setInterval(addFreelancer, 5000);
 
 // What element in your html document is this referencing?
 // Make sure to add a proper class or id to specify
-const average = document.querySelector("average"); // double check your selector when the element exists!
+const average = document.querySelector("averages"); // double check your selector when the element exists!
 
 // If you want to interpolate values into strings, you have to use backticks 👉🏽 ``
 // You had used "" instead and that was throwing everything off
+
+
 average.innerHTML = `The average starting prices is: ${calculateAveragePrice().toFixed(
-  2
-)}
-`;
+    2
+  )}
+  `;
+  
+
+
