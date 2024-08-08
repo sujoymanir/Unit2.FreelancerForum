@@ -58,15 +58,14 @@ const names = [
 const prices = [25, 51, 43, 81, 43, 76, 47, 72];
 const occupations = ["teacher", "programmer", "driver", "gardener"];
 
-
-const calculateAveragePrice=() =>{
-  const total= freelancers.reduce(
-    (sum, freelancer)=> sum+ freelancer.price,0
-  
-  )
+const calculateAveragePrice = () => {
+  const total = freelancers.reduce(
+    (sum, freelancer) => sum + freelancer.price,
+    0
+  );
+  // You forgot to return the total
+  return total;
 };
-
-
 
 function random(limit) {
   return Math.round(Math.random() * (limit - 1));
@@ -104,13 +103,15 @@ function addFreelancer() {
   renderJobs();
 }
 
-
-
 const addFreelancersIntervalId = setInterval(addFreelancer, 5000);
 
-const average=document.querySelector("average"):
-average.innerHTML="The average starting prices is: $" $
-(calculateAveragePrice().toFixed(
+// What element in your html document is this referencing?
+// Make sure to add a proper class or id to specify
+const average = document.querySelector("average"); // double check your selector when the element exists!
+
+// If you want to interpolate values into strings, you have to use backticks 👉🏽 ``
+// You had used "" instead and that was throwing everything off
+average.innerHTML = `The average starting prices is: ${calculateAveragePrice().toFixed(
   2
-))`;
-});
+)}
+`;
