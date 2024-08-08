@@ -105,7 +105,7 @@ function addFreelancer() {
 
 const addFreelancersIntervalId = setInterval(addFreelancer, 5000);
 
-// You need to use the . to specify a class!!!
+// You need to use the # to specify an ID!!!
 const average = document.querySelector("#averages");
 
 // If you want to interpolate values into strings, you have to use backticks 👉🏽 ``
