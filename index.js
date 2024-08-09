@@ -59,10 +59,9 @@ const prices = [25, 51, 43, 81, 43, 76, 47, 72];
 const occupations = ["teacher", "programmer", "driver", "gardener"];
 
 const calculateAveragePrice = () => {
-  const total = freelancers.reduce(
-    (sum, freelancer) => sum + freelancer.price,
-    0
-  );
+  const total =
+    freelancers.reduce((sum, freelancer) => sum + freelancer.price, 0) /
+    freelancers.length;
   // You forgot to return the total
   return total;
 };
@@ -94,6 +93,10 @@ function renderJobs() {
     <td>${member.occupation}</td>`;
     table.appendChild(row);
   });
+  const average = document.querySelector("#averages");
+  average.innerHTML = `The average starting prices is: ${calculateAveragePrice().toFixed(
+    2
+  )}`;
 }
 renderJobs();
 
@@ -103,15 +106,14 @@ function addFreelancer() {
   renderJobs();
 }
 
+// function totalaverage(){
+//   console.log (newtable);
+
+// }
+
 const addFreelancersIntervalId = setInterval(addFreelancer, 5000);
 
 // You need to use the # to specify an ID!!!
-const average = document.querySelector("#averages");
 
 // If you want to interpolate values into strings, you have to use backticks 👉🏽 ``
 // You had used "" instead and that was throwing everything off
-
-average.innerHTML = `The average starting prices is: ${calculateAveragePrice().toFixed(
-  2
-)}
-  `;
